@@ -16,6 +16,11 @@
         <p>You are {{ isSubscribed ? "Subscribed" : "Not Subscribed" }}</p>
         <p>Your First test name is : {{ completedTests[0].testName }}</p>
         <p>Your First test result is : {{ completedTests[0].testResult }}</p>
+        <!-- <p>{{saySomething()}}</p> -->
+        <!-- <p>{{sayMyName()}}</p> -->
+        <p>{{yourAgeDays()}}</p>
+        <p>{{ date }}</p>
+        <button @click="showNewDate">Show New Date</button>
     </div>
 <script src="main.js"></script>
 <script src="vue.js"></script>
@@ -25,6 +30,7 @@
         data: {
             name: "Ahmed",
             age: 31,
+            date: `Today`,
             skills: ["html", "css", "js"],
             isSubscribed: false,
             completedTests: [
@@ -40,7 +46,27 @@
                     testName: "thirdTest",
                     testResult: "70%"
                 },
-            ]
+            ],
+        },
+        // methods: {
+        //     saySomething: function () {
+        //         return `Hello From vue.js methods`;
+        //     }
+        // }
+        // methods: {
+        //     sayMyName: function () {  
+        //         // return this.name;
+        //         // return this.age;
+        //         return this.skills[2];
+        //     }
+        // }
+        methods: {
+            yourAgeDays: function () {  
+                return `Your Age in Days : ` + this.age * 365 ;
+            },
+            showNewDate: function () {
+                this.date = Date();
+            }
         }
     })
 </script>

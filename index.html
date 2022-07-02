@@ -21,6 +21,11 @@
         <p>{{yourAgeDays()}}</p>
         <p>{{ date }}</p>
         <button @click="showNewDate">Show New Date</button>
+
+        <!-- we make this condition to test it with v-text -->
+        <p v-text="name ? `your name is set` : `your name is not set` "></p>
+        <!-- We make this to test change inner v-html -->
+        <p v-html="title"></p>
     </div>
 <script src="main.js"></script>
 <script src="vue.js"></script>
@@ -29,6 +34,8 @@
         el: `#Oldaf`,
         data: {
             name: "Ahmed",
+            // name: false,   // we make this to use it with v-text
+            title: `<b class="rank">Noob</b>`, 
             age: 31,
             date: `Today`,
             skills: ["html", "css", "js"],

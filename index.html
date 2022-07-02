@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Vue.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="Oldaf">
+        <h1>Hello Ths is First Vue</h1>
+        <p>Hello {{ `Mr ` + name }} We Are so happy to see you</p>
+        <p>Your Age is {{ age + "Years" }}</p>
+        <p>Your First Skills is: {{ skills[0] }}</p>
+        <p>You are {{ isSubscribed ? "Subscribed" : "Not Subscribed" }}</p>
+        <p>Your First test name is : {{ completedTests[0].testName }}</p>
+        <p>Your First test result is : {{ completedTests[0].testResult }}</p>
+    </div>
+<script src="main.js"></script>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: `#Oldaf`,
+        data: {
+            name: "Ahmed",
+            age: 31,
+            skills: ["html", "css", "js"],
+            isSubscribed: false,
+            completedTests: [
+                {
+                    testName: "firstTest",
+                    testResult: "90%"
+                },
+                {
+                    testName: "secondTest",
+                    testResult: "80%"
+                },
+                {
+                    testName: "thirdTest",
+                    testResult: "70%"
+                },
+            ]
+        }
+    })
+</script>
+</body>
+</html>

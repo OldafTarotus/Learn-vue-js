@@ -64,10 +64,22 @@
             <input type="text" v-model="source" placeholder="Using v-model"> <!-- Two Way Binding -->
         </form>
         <p>your name is {{ source }}</p>
+        <hr>
+        <app-count></app-count>
+        <hr>
     </div>
 <script src="main.js"></script>
 <script src="vue.js"></script>
 <script>
+    Vue.component(`app-count`, {
+        data: function () {
+            return {
+                name: `Ahmed`,
+                count: 0,
+            }
+        },
+        template: `<p @click="count++"> Hello Mr {{ name }} You can click on this Paragraph {{ count }} Times</p>`
+    })
     var vm = new Vue({
         el: `#Oldaf`,
         data: {
@@ -121,6 +133,14 @@
     })
 </script>
 <p>"v-text & v-html & v-for & v-if & v-else-if & v-else & v-once & v-show & v-bind or : & v-on:click.anything or @click.anything  & v-model."</p>
+<pre>"const vu = new Vue({ 
+    el: ``,
+    data: {
+
+    }})"</pre>
+<hr>
+<pre>"Vue.component(``,{ 
+    })"</pre>
 </body>
 </html>
 

@@ -45,6 +45,11 @@
             </ul>
         </p>
         ------------------------------------------
+        <p v-if="age > 60">You are too old</p>
+        <p v-else-if="age > 15 && age <= 45">You are a Man</p>
+        <p v-else>You still Under Controll</p>
+        ------------------------------------------
+
     </div>
 <script src="main.js"></script>
 <script src="vue.js"></script>
@@ -55,7 +60,7 @@
             name: "Ahmed",
             // name: false,   // we make this to use it with v-text
             title: `<b class="rank">Noob</b>`, 
-            age: 31,
+            age: 45,
             date: `Today`,
             skills: ["html", "css", "js", "vue.js"],
             isSubscribed: false,

@@ -58,6 +58,12 @@
         <hr>
         <p> Counter is : {{ counter }}</p>
         <button v-on:click="counter++">Increase</button>  <!-- we can use @click >> v-on:click  -->
+        <hr>
+        <form action="">
+            <input type="text" v-bind:value="source" placeholder="Using v-bind"> <!-- One Way Binding -->
+            <input type="text" v-model="source" placeholder="Using v-model"> <!-- Two Way Binding -->
+        </form>
+        <p>your name is {{ source }}</p>
     </div>
 <script src="main.js"></script>
 <script src="vue.js"></script>
@@ -69,6 +75,7 @@
             imageAltText: `The Alternate Test`,
             imageUrl: "https://www.google.com",
             counter: 0,
+            source: `Ahmed`,
             name: "Ahmed",
             // name: false,   // we make this to use it with v-text
             title: `<b class="rank">Noob</b>`, 
@@ -113,7 +120,7 @@
         }
     })
 </script>
-<p>"v-text & v-html & v-for & v-if & v-else-if & v-else & v-once & v-show & v-bind or : & v-on:click.anything or @click.anything "</p>
+<p>"v-text & v-html & v-for & v-if & v-else-if & v-else & v-once & v-show & v-bind or : & v-on:click.anything or @click.anything  & v-model."</p>
 </body>
 </html>
 

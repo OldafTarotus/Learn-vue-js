@@ -49,7 +49,15 @@
         <p v-else-if="age > 15 && age <= 45">You are a Man</p>
         <p v-else>You still Under Controll</p>
         ------------------------------------------
-
+        <p v-show="name">{{ name }}</p> <!-- if i need to keep element inside page and want to display it again -->
+        <p v-once="age">{{ age }}</p>  <!-- if i need from vue not render or move on this line again -->
+        <hr>
+        <a v-bind:href="imageUrl">  <!-- we can use (v-bind:  or just :)-->
+            <img :src="imageSrc" :alt="imageAltText"> <!-- we can use (v-bind:  or just :)-->
+        </a>
+        <hr>
+        <p> Counter is : {{ counter }}</p>
+        <button v-on:click="counter++">Increase</button>  <!-- we can use @click >> v-on:click  -->
     </div>
 <script src="main.js"></script>
 <script src="vue.js"></script>
@@ -57,10 +65,14 @@
     var vm = new Vue({
         el: `#Oldaf`,
         data: {
+            imageSrc: `01.jpg`,
+            imageAltText: `The Alternate Test`,
+            imageUrl: "https://www.google.com",
+            counter: 0,
             name: "Ahmed",
             // name: false,   // we make this to use it with v-text
             title: `<b class="rank">Noob</b>`, 
-            age: 45,
+            age: 31,
             date: `Today`,
             skills: ["html", "css", "js", "vue.js"],
             isSubscribed: false,
@@ -101,5 +113,9 @@
         }
     })
 </script>
+<p>"v-text & v-html & v-for & v-if & v-else-if & v-else & v-once & v-show & v-bind or : & v-on:click.anything or @click.anything "</p>
 </body>
 </html>
+
+
+

@@ -65,7 +65,11 @@
         </form>
         <p>your name is {{ source }}</p>
         <hr>
-        <app-count></app-count>
+        <app-count v-bind:source="source" v-bind:url="url"></app-count>
+        <app-count :source="source" :url="url"></app-count>
+        <app-count :source="source" :url="url"></app-count>
+        <hr>
+        <app-artical v-for="post in posts" :title="post.title" :author="post.author"></app-artical>
         <hr>
     </div>
 <script src="main.js"></script>
@@ -78,7 +82,17 @@
                 count: 0,
             }
         },
-        template: `<p @click="count++"> Hello Mr {{ name }} You can click on this Paragraph {{ count }} Times</p>`
+        props: [`source`, `url`],
+        template: `<p @click="count++"> Hello Mr {{ name }} You can click on this Paragraph {{ count }} Times <button><mark>press here</mark></button> source {{ source }} and url {{ url }}</p>`
+    })
+    Vue.component(`app-artical`, {
+        data: function () {
+            return {
+                count: 0,
+            }
+        },
+        props: [`title`, `author`],
+        template: `<p @click="count++">Artical title is {{ title }} And Written by <mark>{{ author }}</mark> count: {{ count }}</p>`,
     })
     var vm = new Vue({
         el: `#Oldaf`,
@@ -88,6 +102,7 @@
             imageUrl: "https://www.google.com",
             counter: 0,
             source: `Ahmed`,
+            url: `https://www.google.com`,
             name: "Ahmed",
             // name: false,   // we make this to use it with v-text
             title: `<b class="rank">Noob</b>`, 
@@ -95,6 +110,13 @@
             date: `Today`,
             skills: ["html", "css", "js", "vue.js"],
             isSubscribed: false,
+            posts: [
+                {id: 1, author: `Ahmed`, title: `Artical Number One`},
+                {id: 2, author: `Mohamed`, title: `Artical Number two`},
+                {id: 3, author: `Sayed`, title: `Artical Number three`},
+                {id: 4, author: `Sondos`, title: `Artical Number four`},
+                {id: 5, author: `Gehad`, title: `Artical Number five`},
+            ],
             completedTests: [
                 {
                     testName: "firstTest",
@@ -133,14 +155,6 @@
     })
 </script>
 <p>"v-text & v-html & v-for & v-if & v-else-if & v-else & v-once & v-show & v-bind or : & v-on:click.anything or @click.anything  & v-model."</p>
-<pre>"const vu = new Vue({ 
-    el: ``,
-    data: {
-
-    }})"</pre>
-<hr>
-<pre>"Vue.component(``,{ 
-    })"</pre>
 </body>
 </html>
 

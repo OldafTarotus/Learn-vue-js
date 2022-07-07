@@ -78,6 +78,20 @@
         <hr>
         <!-- if we need to make it by computed and this is better without function-->
         <p>your age is {{ calcAge }}</p>
+        <hr>
+        <!-- this example for computing  -->
+        <label>Search for programming language</label>
+        <input type="text" v-model="findLanguage">
+        <ul>
+            <li v-for="lang in filterlanguages">
+                {{ lang }}
+            </li>
+        </ul>
+        <hr>
+        <!-- this example for validation -->
+        <label>Write Your username</label>
+        <input type="text" v-model.lazy="username">
+        <p>{{ validateusername }}</p>
     </div>
 <script src="main.js"></script>
 <script src="vue.js"></script>
@@ -114,6 +128,7 @@
     var vm = new Vue({
         el: `#Oldaf`,
         data: {
+            username: ``,
             imageSrc: `01.jpg`,
             imageAltText: `The Alternate Test`,
             imageUrl: "https://www.google.com",
@@ -148,6 +163,14 @@
                     testResult: "70%"
                 },
             ],
+            languages: [
+                `html`,
+                `css`,
+                `javascript`,
+                `vue.js`,
+                `mysql`,
+                `php`,
+            ]
         },
         // methods: {
         //     saySomething: function () {
@@ -183,6 +206,28 @@
             calcAge: function () {
                 console.log(`run`);
                 return this.age * 2;
+            }
+        },
+        computed: {
+            filterLanguages: function () {
+                var filtering = new RegExp(this.findLanguage, `i`);
+                return this.languages.filter(function (el) {
+                    return el.match(filtering);
+                    // return this.languages.filter(el => el.match(filtering));  this code same up code with short hand
+                })
+            }
+        },
+        computed: {
+            validateusername: function () {
+                if (!this.username) {
+                    return `username can not be empety`;
+                } else if (this.username.length < 8) {
+                    return `username is too short`;
+                } else if (! isNaN(this.username)) {
+                    return `username can not be number only`;
+                } else {
+                    return `Hello ` + this.username + `everything is good`;
+                }
             }
         },
     })

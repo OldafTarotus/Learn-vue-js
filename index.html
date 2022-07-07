@@ -72,6 +72,12 @@
         <app-artical v-for="post in posts" :title="post.title" :author="post.author"></app-artical>
         <hr>
         <app-artical-item></app-artical-item>   <!-- Local Component -->
+        <hr>
+        <!-- if we want to make it by methods must use function -->
+        <p> your age is {{ calcAge() }}</p>
+        <hr>
+        <!-- if we need to make it by computed and this is better without function-->
+        <p>your age is {{ calcAge }}</p>
     </div>
 <script src="main.js"></script>
 <script src="vue.js"></script>
@@ -167,6 +173,18 @@
         // components: {
         //     `app-artical-item`: appArticalItem
         // },
+        methods: {
+            calcAge: function () {
+                console.log(`run`);
+                return this.age * 2;
+            }
+        },
+        computed: {
+            calcAge: function () {
+                console.log(`run`);
+                return this.age * 2;
+            }
+        },
     })
 </script>
 <p>"v-text & v-html & v-for & v-if & v-else-if & v-else & v-once & v-show & v-bind or : & v-on:click.anything or @click.anything  & v-model."</p>

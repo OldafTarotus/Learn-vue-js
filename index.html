@@ -71,10 +71,12 @@
         <hr>
         <app-artical v-for="post in posts" :title="post.title" :author="post.author"></app-artical>
         <hr>
+        <app-artical-item></app-artical-item>   <!-- Local Component -->
     </div>
 <script src="main.js"></script>
 <script src="vue.js"></script>
 <script>
+    // Global Component
     Vue.component(`app-count`, {
         data: function () {
             return {
@@ -94,6 +96,15 @@
         props: [`title`, `author`],
         template: `<p @click="count++">Artical title is {{ title }} And Written by <mark>{{ author }}</mark> count: {{ count }}</p>`,
     })
+    // local component  <<<<<<<<<<<<
+    // var appArticalItem = {
+    //     data: function () {
+    //         return {
+    //             count: 0
+    //         }
+    //     },
+    //     template: `<p>Local component {{ count }}</p>`
+    // }
     var vm = new Vue({
         el: `#Oldaf`,
         data: {
@@ -151,7 +162,11 @@
             showNewDate: function () {
                 this.date = Date();
             }
-        }
+        },
+        // Local component   <<<<<<<<<<<<<
+        // components: {
+        //     `app-artical-item`: appArticalItem
+        // },
     })
 </script>
 <p>"v-text & v-html & v-for & v-if & v-else-if & v-else & v-once & v-show & v-bind or : & v-on:click.anything or @click.anything  & v-model."</p>

@@ -98,6 +98,14 @@
         <input type="text" v-model="egy">
         <label>Saudi Riyal</label>
         <input type="text" v-model="sar">
+        ------------------------------------------
+        <hr>
+        <label>hour</label>
+        <input type="text" v-model="hour">
+        <label>minutes</label>
+        <input type="text" v-model="minutes">
+        <label>second</label>
+        <input type="text" v-model="second">
     </div>
 <script src="main.js"></script>
 <script src="vue.js"></script>
@@ -136,6 +144,9 @@
         data: {
             egy: 0,
             sar: 0,
+            hour: 0,
+            minutes: 0,
+            second: 0,
             username: ``,
             imageSrc: `01.jpg`,
             imageAltText: `The Alternate Test`,
@@ -221,7 +232,7 @@
                 var filtering = new RegExp(this.findLanguage, `i`);
                 return this.languages.filter(function (el) {
                     return el.match(filtering);
-                    // return this.languages.filter(el => el.match(filtering));  this code same up code with short hand
+                    // return this.languages.filter(el => el.match(filtering));  this code same up code with ES6
                 })
             }
         },
@@ -246,6 +257,19 @@
                 this.egy = v * 5;
             }
         },
+        // advanced example 
+        watch: {
+            hour: function (v) {
+                this.minutes = v * 60;
+            },
+            minutes: function (v) {
+                this.hour = v / 60;
+                this.second = v * 60;
+            },
+            second: function (v) {
+                this.minutes = v / 60;
+            },
+        }
     })
 </script>
 <p>"v-text & v-html & v-for & v-if & v-else-if & v-else & v-once & v-show & v-bind or : & v-on:click.anything or @click.anything  & v-model."</p>

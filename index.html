@@ -92,6 +92,12 @@
         <label>Write Your username</label>
         <input type="text" v-model.lazy="username">
         <p>{{ validateusername }}</p>
+        ------------------------------------------
+        <hr>
+        <label>Egyption Pound</label>
+        <input type="text" v-model="egy">
+        <label>Saudi Riyal</label>
+        <input type="text" v-model="sar">
     </div>
 <script src="main.js"></script>
 <script src="vue.js"></script>
@@ -128,6 +134,8 @@
     var vm = new Vue({
         el: `#Oldaf`,
         data: {
+            egy: 0,
+            sar: 0,
             username: ``,
             imageSrc: `01.jpg`,
             imageAltText: `The Alternate Test`,
@@ -228,6 +236,14 @@
                 } else {
                     return `Hello ` + this.username + `everything is good`;
                 }
+            }
+        },
+        watch: {
+            egy: function (v) {
+                this.sar = v / 5;
+            },
+            sar: function (v) {
+                this.egy = v * 5;
             }
         },
     })

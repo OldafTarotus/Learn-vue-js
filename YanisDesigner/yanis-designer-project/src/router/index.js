@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import About from "../views/AboutView.vue";
 import Help from "../views/help.vue";
 import products from "../views/products.vue";
+import Blog from "../views/blog.vue";
 
 const routes = [
   {
@@ -29,6 +30,11 @@ const routes = [
     path: "/products",
     name: "products",
     component: products,
+  },
+  {
+    path: "/blog",
+    name: "Blog",
+    component: Blog,
   },
 ];
 

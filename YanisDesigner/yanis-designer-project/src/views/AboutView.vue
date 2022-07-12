@@ -1,18 +1,18 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <Hiho />
+    <h1>{{ pageName }}</h1>
+    <p>{{ pageDescription }}</p>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import Hiho from "@/components/WelcomeMessage.vue";
-
 export default {
-  name: `about`,
-  components: {
-    Hiho,
+  data: function () {
+    return {
+      pageName: "About Us",
+      pageDescription: "This is About Us Page",
+    };
   },
+  name: `about`,
 };
 </script>

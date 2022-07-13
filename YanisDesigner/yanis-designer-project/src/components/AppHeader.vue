@@ -1,27 +1,33 @@
 <template>
   <div class="header">
-    <div class="logo">Oldaf Vue Project</div>
-    <ul>
-      <router-link to="/" exact>
-        <a>Home</a>
-      </router-link>
-      |
-      <router-link to="/about" replace>
-        <a>About</a>
-      </router-link>
-      |
-      <router-link to="/help">
-        <a>help</a>
-      </router-link>
-      |
-      <router-link to="/products">
-        <a>Product</a>
-      </router-link>
-      |
-      <router-link to="/Blog">
-        <a>Blog</a>
-      </router-link>
-    </ul>
+    <div class="container">
+      <div class="logo">Oldaf Vue Project</div>
+      <ul class="text-right">
+        <router-link to="/" exact>
+          <a>Home</a>
+        </router-link>
+        |
+        <router-link to="/about" replace>
+          <a>About</a>
+        </router-link>
+        |
+        <router-link to="/Products">
+          <a>Product</a>
+        </router-link>
+        |
+        <router-link to="/Blog">
+          <a>Blog</a>
+        </router-link>
+        |
+        <router-link to="/Help">
+          <a>Help</a>
+        </router-link>
+        |
+        <router-link to="/Research">
+          <a>Research</a>
+        </router-link>
+      </ul>
+    </div>
   </div>
 </template>
 

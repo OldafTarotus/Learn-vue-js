@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import About from "../views/AboutView.vue";
-import Help from "../views/help.vue";
 import products from "../views/products.vue";
 import Blog from "../views/blog.vue";
+import Help from "../views/help.vue";
+import Research from "../views/Research.vue";
 
 const routes = [
   {
@@ -22,11 +23,6 @@ const routes = [
     //   import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: "/help",
-    name: "help",
-    component: Help,
-  },
-  {
     path: "/products",
     name: "products",
     component: products,
@@ -35,6 +31,16 @@ const routes = [
     path: "/blog",
     name: "Blog",
     component: Blog,
+  },
+  {
+    path: "/help",
+    name: "help",
+    component: Help,
+  },
+  {
+    path: "/Research",
+    name: "Research",
+    component: Research,
   },
 ];
 

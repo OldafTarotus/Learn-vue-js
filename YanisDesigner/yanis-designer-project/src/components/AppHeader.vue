@@ -53,6 +53,6 @@ a {
   text-decoration: none;
   color: white;
   display: inline-block;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 </style>

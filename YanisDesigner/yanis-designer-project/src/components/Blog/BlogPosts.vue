@@ -11,6 +11,18 @@
       <div class="name-right">
         <span class="post-category">{{ category }}</span>
       </div>
+      <!-- Testing Filters (1) -->
+      <!-- <div class="name-right">
+        <span class="post-category">{{ category | uppercase | reversing }}</span>
+      </div> -->
+      <!-- Testing Filters (2) -->
+      <!-- <div class="name-right">
+        <span class="post-category">{{ category | shorten }}</span>
+        or (3)
+        <span class="post-category">{{ category | shorten(100) }}</span>
+        or (4)
+        <span class="post-category">{{ category | shorten(100, "...") }}</span>
+      </div> -->
     </div>
   </div>
 </template>
